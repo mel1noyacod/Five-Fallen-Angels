@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dse3sj1qmfrsg"]
+
+[ext_resource type="PackedScene" uid="uid://blg573epy2ga6" path="res://player.tscn" id="1_ig7tw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(1, 1, 0.39215687, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
+material = SubResource("StandardMaterial3D_ig7tw")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+
+[node name="Main" type="Node3D" unique_id=1706507424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1543073, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2134403352]
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_0xm2m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=302850452]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1570166188]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="Player" parent="." unique_id=960074420 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003728032, 0.8928742, -0.06496477)
